@@ -31,7 +31,9 @@ type NodeBag struct {
 }
 
 func NewNodeBag() *NodeBag {
-	return &NodeBag{}
+	bag := &NodeBag{}
+	bag.last = make(map[string]float64)
+	return bag
 }
 
 func (b *NodeBag) Remember(node string, eu float64) {
